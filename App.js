@@ -1,14 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { NativeRouter, Switch, Route } from "react-router-native";
+
+import Home from "./Home";
+import Products from "./Products";
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <NativeRouter>
+        <View style={styles.container}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/products" component={Products} />
+          </Switch>
+        </View>
+      </NativeRouter>
     );
   }
 }
@@ -16,8 +23,8 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });
