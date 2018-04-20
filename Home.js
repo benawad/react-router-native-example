@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
+import ChangePageButton from "./ChangePageButton";
 
-export default ({ history }) => (
+export default () => (
   <View>
     <Text>This is the home page</Text>
-    <Button title="change page" onPress={() => history.push("/products")} />
+    <ChangePageButton />
   </View>
 );
